@@ -8,7 +8,7 @@ The website is fully responsive and works smoothly on both desktop and mobile de
 ---
 
 ## Live Website
-👉 https://faizanashfaq.netlify.app/
+👉 https://faizan-cv.vercel.app/
 
 ---
 
