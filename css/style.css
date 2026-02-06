@@ -1,0 +1,258 @@
+/* =====================
+   VARIABLES
+===================== */
+:root {
+    --bg: #f8fafc;
+    --text: #1f2937;
+    --card: #ffffff;
+    --primary: #4f46e5;
+    --muted: #6b7280;
+}
+
+/* DARK MODE */
+#theme-toggle:checked ~ .app {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --card: #1e293b;
+    --muted: #cbd5f5;
+}
+
+/* =====================
+   RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+/* =====================
+   APP
+===================== */
+.app {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.4s, color 0.4s;
+}
+
+/* =====================
+   DARK MODE BUTTON
+===================== */
+#theme-toggle {
+    display: none;
+}
+
+.theme-btn {
+    position: fixed;
+    top: 80px;
+    right: 18px;
+    background: var(--primary);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: var(--card);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.section {
+    max-width: 1000px;
+    margin: 90px auto;
+    padding: 0 20px;
+    scroll-margin-top: 110px;
+}
+
+.section h2 {
+    margin-bottom: 25px;
+    color: var(--primary);
+}
+
+/* =====================
+   HERO
+===================== */
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-img img {
+    width: 240px;
+    border-radius: 50%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hero-text p {
+    margin: 12px 0;
+    color: var(--muted);
+}
+
+/* FLOATING IMAGE */
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* =====================
+   SKILL TAGS
+===================== */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.skill-tags span {
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+.skill-tags span:hover {
+    transform: scale(1.1);
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 15px var(--primary);
+    transform: translateY(-2px);
+}
+
+/* =====================
+   CARDS
+===================== */
+.card,
+.contact-card {
+    background: var(--card);
+    color: var(--text);
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover,
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* =====================
+   CONTACT
+===================== */
+.contact-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background: var(--card);
+    color: var(--text);
+    text-align: center;
+    padding: 20px;
+}
+
+/* =====================
+   KEYFRAMES
+===================== */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
