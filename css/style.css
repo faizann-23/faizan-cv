@@ -243,6 +243,9 @@ body {
     background: transparent;
     color: var(--text);
 }
+.form-title {
+    margin-bottom: 20px;
+}
 
 /* =====================
    FOOTER
